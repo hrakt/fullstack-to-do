@@ -114,6 +114,10 @@
   height: 1em;
 }
 
+.form {
+  display: flex;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
