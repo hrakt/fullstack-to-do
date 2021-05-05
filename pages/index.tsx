@@ -22,24 +22,23 @@ const Home = ({ properties }) => {
     // console.log(item);
     const data = await fetch(`http://localhost:3000/api/addItem?title=${item}`);
     refreshData();
-    console.log(await data.json());
   };
 
-  const removeItem = (e) => {
-    const itemIndex = e.currentTarget.dataset.index;
-    const updatedArray = list.filter(
-      (item, index) => index !== Number(itemIndex)
-    );
-    setList([...updatedArray]);
+  const removeItem = async (id) => {
+    console.log(id);
+    const data = await fetch(`http://localhost:3000/api/removeItem?id=${id}`);
+    console.log(data);
+    refreshData();
+    // setList([...updatedArray]);
   };
 
   return (
     <div className={styles.container}>
       <main>
-        <List list={list} removeItem={removeItem} />
         <Form addListItem={addListItem} />
+        <List list={list} removeItem={removeItem} />
       </main>
-      <footer className={styles.footer}></footer>
+      {/* <footer className={styles.footer}></footer> */}
     </div>
   );
 };

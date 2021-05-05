@@ -27,7 +27,7 @@ const Form: React.FC<Props> = ({ addListItem }) => {
           className="form-input px-4 py-1 rounded"
         />
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-1 border border-blue-700 rounded">
-          Submit
+          Add
         </button>
       </form>
     </div>

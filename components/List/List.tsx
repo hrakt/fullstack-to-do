@@ -5,20 +5,15 @@ type Props = {
   removeItem: (item: any) => void;
 };
 
-// interface ListItem {
-//   title: string;
-//   id: number;
-// }
-
 const List: React.FC<Props> = ({ list, removeItem }) => {
   return (
     <div>
       {list.map((item) => {
         return (
-          <div className={styles.listItem} key={item.key}>
+          <div className={styles.listItem} key={item._id}>
             <a
               className={styles.removeIcon}
-              onClick={(e) => removeItem(e)}
+              onClick={() => removeItem(item._id)}
               data-index={item.key}
             >
               <svg
